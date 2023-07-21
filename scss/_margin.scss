@@ -1,0 +1,163 @@
+.m {
+	&-remove {
+		margin: 0;
+	}
+	&-xs {
+		margin: $xs;
+	}
+	&-sm {
+		margin: $sm;
+	}
+	&-md {
+		margin: $md;
+	}
+	&-lg {
+		margin: $lg;
+	}
+	&-xl {
+		margin: $xl;
+	}
+	&-xxl {
+		margin: $xxl;
+	}
+	&-t-remove {
+		margin-top: 0;
+	}
+	&-t-xs {
+		margin-top: $xs;
+	}
+	&-t-sm {
+		margin-top: $sm;
+	}
+	&-t-md {
+		margin-top: $md;
+	}
+	&-t-lg {
+		margin-top: $lg;
+	}
+	&-t-xl {
+		margin-top: $xl;
+	}
+	&-t-xxl {
+		margin-top: $xxl;
+	}
+	&-r-remove {
+		margin-right: 0;
+	}
+	&-r-xs {
+		margin-right: $xs;
+	}
+	&-r-sm {
+		margin-right: $sm;
+	}
+	&-r-md {
+		margin-right: $md;
+	}
+	&-r-lg {
+		margin-right: $lg;
+	}
+	&-r-xl {
+		margin-right: $xl;
+	}
+	&-r-xxl {
+		margin-right: $xxl;
+	}
+	&-b-remove {
+		margin-bottom: 0;
+	}
+	&-b-xs {
+		margin-bottom: $xs;
+	}
+	&-b-sm {
+		margin-bottom: $sm;
+	}
+	&-b-md {
+		margin-bottom: $md;
+	}
+	&-b-lg {
+		margin-bottom: $lg;
+	}
+	&-b-xl {
+		margin-bottom: $xl;
+	}
+	&-b-xxl {
+		margin-bottom: $xxl;
+	}
+	&-l-remove {
+		margin-left: 0;
+	}
+	&-l-xs {
+		margin-left: $xs;
+	}
+	&-l-sm {
+		margin-left: $sm;
+	}
+	&-l-md {
+		margin-left: $md;
+	}
+	&-l-lg {
+		margin-left: $lg;
+	}
+	&-l-xl {
+		margin-left: $xl;
+	}
+	&-l-xxl {
+		margin-left: $xxl;
+	}
+	&-x-remove {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	&-x-xs {
+		margin-left: $xs;
+		margin-right: $xs;
+	}
+	&-x-sm {
+		margin-left: $sm;
+		margin-right: $sm;
+	}
+	&-x-md {
+		margin-left: $md;
+		margin-right: $md;
+	}
+	&-x-lg {
+		margin-left: $lg;
+		margin-right: $lg;
+	}
+	&-x-xl {
+		margin-left: $xl;
+		margin-right: $xl;
+	}
+	&-x-xxl {
+		margin-left: $xxl;
+		margin-right: $xxl;
+	}
+	&-y-remove {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	&-y-xs {
+		margin-top: $xs;
+		margin-bottom: $xs;
+	}
+	&-y-sm {
+		margin-top: $sm;
+		margin-bottom: $sm;
+	}
+	&-y-md {
+		margin-top: $md;
+		margin-bottom: $md;
+	}
+	&-y-lg {
+		margin-top: $lg;
+		margin-bottom: $lg;
+	}
+	&-y-xl {
+		margin-top: $xl;
+		margin-bottom: $xl;
+	}
+	&-y-xxl {
+		margin-top: $xxl;
+		margin-bottom: $xxl;
+	}
+}

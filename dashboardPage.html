@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Dashboard</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/css/uikit.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- JS -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.5/dist/js/uikit-icons.min.js"></script>
+
+		<!-- Fontawesome cdn  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+		<!-- boxicon cdn  -->
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="uk-grid-collapse" uk-grid>
+			<div class="uk-width-1-6">
+				<!-- sidebar -->
+				<aside class="sidebar uk-width-1-6" uk-height-viewport>
+					<header>
+						<div class="image-text">
+							<span class="image">
+								<img src="./images/logo.svg" alt="" />
+							</span>
+
+							<div class="text header-text">
+								<span class="name">QuickStrike</span>
+							</div>
+						</div>
+					</header>
+					<ul>
+						<li class="nav-link active">
+							<a href="dashboard.html"><i class="bx bxs-grid-alt icon"></i> <span class="text">Dashboard</span></a>
+						</li>
+						<li class="nav-link">
+							<a href="atttendancePage.html"><i class="bx bx-calendar icon"></i> <span class="text">Attendance</span></a>
+						</li>
+						<li class="nav-link">
+							<a href="projectModule.html"><i class="bx bxs-folder-open icon"></i> <span class="text">Project</span></a>
+						</li>
+						<li class="nav-link">
+							<a href="profilePage.html"><i class="bx bxs-user icon"></i> <span class="text">Profile</span></a>
+						</li>
+						<li class="nav-link">
+							<a href="employeePage.html"><i class="bx bxs-group icon"></i> <span class="text">Employees</span></a>
+						</li>
+						<hr style="margin: 30px 0px" />
+						<li class="nav-link">
+							<a href="#"><i class="bx bxs-cog icon"></i> <span class="text">Settings</span></a>
+						</li>
+						<li class="nav-link">
+							<a href="#"><i class="bx bx-log-out icon"></i> <span class="text">Logout</span></a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<div class="uk-width-expand">
+				<div uk-height-overflow="offset-top: true" uk-overflow-auto></div>
+					<main style="padding: 30px 50px 0" uk-height-viewport>
+						<header class="uk-navbar-container" style="background: none">
+							<div class="uk-flex-between">
+								<div uk-navbar>
+									<div class="uk-navbar-left">
+										<ul class="uk-navbar-nav">
+											<h1 class="m-t-sm">Dashboard</h1>
+										</ul>
+									</div>
+									<div class="uk-navbar-right">
+										<ul class="uk-navbar-nav uk-flex">
+											<li class="m-t-sm"><span uk-icon="bell"></span></li>
+											<li>juan@qstrike.com <img src="images/avatar.jpg" class="img-sm" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</header>
+						<!-- Attendance Page Summary  -->
+						<!-- Attendance and Leave Summary -->
+						<section class="m-y-md">
+							<div class="section">
+								<div class="chartMenu m-lg">
+									<h2>Attendance and Leave Overview</h2>
+								</div>
+								<div class="chartCard">
+									<div class="chartBox">
+										<canvas id="myChart"></canvas>
+										<div class="uk-grid m-t-md">
+											<div class="uk-width-1-6@s">
+												<select class="uk-select" onchange="yearData(this)">
+													<option value="2021">2021</option>
+													<option value="2022">2022</option>
+													<option value="2023">2023</option>	
+												</select>
+											</div>
+											<div class="m-t-xs uk-width-1-6@s">
+												<input class="uk-checkbox" type="checkbox" checked="" value="0" onclick="updateChart(this)"> Attendance
+												<input class="uk-checkbox" type="checkbox" checked="" value="1" onclick="updateChart(this)"> Leave
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+								<script>
+								// setup 
+								const data = {
+								// labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+								datasets: [{
+										label: 'Attendance',
+										data: [
+											{x: 'Jan', 2021: 27, 2022: 30, 2023: 29 },
+											{x: 'Feb', 2021: 19, 2022: 15, 2023: 26 },
+											{x: 'Mar', 2021: 19, 2022: 24, 2023: 25 },
+											{x: 'Apr', 2021: 28, 2022: 27, 2023: 25 },
+											{x: 'May', 2021: 30, 2022: 22, 2023: 21 },
+											{x: 'Jun', 2021: 27, 2022: 30, 2023: 12 },
+											{x: 'Jul', 2021: 19, 2022: 15, 2023: 0 },
+											{x: 'Aug', 2021: 19, 2022: 24, 2023: 0 },
+											{x: 'Sep', 2021: 28, 2022: 27, 2023: 0 },
+											{x: 'Oct', 2021: 30, 2022: 22, 2023: 0 },
+											{x: 'Nov', 2021: 19, 2022: 24, 2023: 0 },
+											{x: 'Dec', 2021: 28, 2022: 27, 2023: 0 }
+										],
+										backgroundColor:  'rgba(75, 192, 192, 0.2)',
+										borderColor: 'rgba(75, 192, 192, 1)',
+										borderWidth: 1
+									}, 
+									{
+										label: 'Leave',
+										data: [
+											{x: 'Jan', 2021: 4, 2022: 1, 2023: 2 },
+											{x: 'Feb', 2021: 9, 2022: 13, 2023: 2 },
+											{x: 'Mar', 2021: 12, 2022: 7, 2023: 6 },
+											{x: 'Apr', 2021: 3, 2022: 4, 2023: 6 },
+											{x: 'May', 2021: 1, 2022: 9, 2023: 10 },
+											{x: 'Jun', 2021: 4, 2022: 1, 2023: 2 },
+											{x: 'Jul', 2021: 9, 2022: 13, 2023: 0 },
+											{x: 'Aug', 2021: 12, 2022: 7, 2023: 0 },
+											{x: 'Sep', 2021: 3, 2022: 4, 2023: 0 },
+											{x: 'Oct', 2021: 1, 2022: 9, 2023: 0 },
+											{x: 'Nov', 2021: 4, 2022: 1, 2023: 0 },
+											{x: 'Dec', 2021: 9, 2022: 13, 2023: 0 }
+										],
+										backgroundColor: 'rgba(255, 26, 104, 0.2)',
+										borderColor: 'rgba(255, 26, 104, 1)',
+										borderWidth: 1
+									}]
+								};
+
+								// config 
+								const config = {
+								type: 'bar',
+								data,
+								options: {
+									parsing: {
+										xAxisKey: 'x',
+										yAxisKey: '2021'
+									},
+									scales: {
+									y: {
+										beginAtZero: true
+									}
+									}
+								}
+								};
+
+								// render init block
+								const myChart = new Chart(
+								document.getElementById('myChart'),
+								config
+								);
+
+								function yearData(year) {
+									console.log(year.value);
+									myChart.config.options.parsing.yAxisKey = year.value;
+									myChart.update();
+								}
+
+								function updateChart(dataset) {
+									const isDataShown = myChart.isDatasetVisible(dataset.value)
+									console.log(isDataShown)
+									if (isDataShown == false) {
+										myChart.show(dataset.value);
+									}
+									if (isDataShown == true) {
+										myChart.hide(dataset.value);
+									}
+								}
+
+								// Instantly assign Chart.js version
+								const chartVersion = document.getElementById('chartVersion');
+								chartVersion.innerText = Chart.version;
+								</script>
+							</div>
+						</section>
+						<!-- Projects Page Summary -->
+						<!-- Employee Page Summary -->
+					</main>
+				</div>
+						</div>
+					</header>
+					<!-- Employee Page Summary, Titanium Awardees and Employee Summary Chart -->
+					<section uk-grid class="m-t-xl m-l-remove uk-grid-match">
+						<div class="p-l-remove uk-width-expand">
+							<div class="section">
+								<h2 class="section-title">Titanium Awardees</h2>
+								<div class="m-t-lg uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true; autoplay:true;pause-on-hover:true;autoplay-interval:3000;easing-ease">
+									<ul class="uk-slider-items uk-grid uk-child-width-1-2">
+										<li>
+											<div class="uk-panel">
+												<a href="#awardee-awards-modal-1" uk-toggle>
+													<img src="./images/avatar.jpg" alt="" />
+													<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+														<h3 class="uk-margin-remove p-b-sm">Victor Magtanggol</h3>
+														<p class="uk-margin-remove uk-panel-position m-t-xxl">Front-End Developer</p>
+													</div>
+												</a>
+												<div id="awardee-awards-modal-1" uk-modal>
+													<div class="uk-modal-dialog modal-content uk-modal-body">
+														<div class="uk-position-relative">
+															<h2 class="uk-modal-title f-t-uppercase">awardee awards</h2>
+															<button class="uk-modal-close uk-modal-close-default" type="button" uk-close></button>
+														</div>
+														<div class="p-b-remove">
+															<div class="p-l-remove m-l-remove uk-flex-around m-t-lg uk-flex-middle" uk-grid>
+																<div class="p-remove">
+																	<img class="img-lg p-l-remove" src="./images/avatar.jpg" alt="" />
+																</div>
+																<div class="f-a-center p-remove">
+																	<h3>Victor Magtanggol</h3>
+																	<h5 class="f-w-medium m-y-sm">Front-End Developer</h5>
+																</div>
+															</div>
+															<h2>Awards</h2>
+															<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+																<div>
+																	<a class="uk-inline" href="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" data-caption="Received on March 27, 2019">
+																		<img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="uk-panel">
+												<a href="#awardee-awards-modal-2" uk-toggle>
+													<img src="./images/avatar.jpg" alt="" />
+													<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+														<h3 class="uk-margin-remove p-b-sm">Ezekiel Magnata</h3>
+														<p class="uk-margin-remove uk-panel-position m-t-xxl">HR Manager</p>
+													</div>
+												</a>
+												<div id="awardee-awards-modal-2" uk-modal>
+													<div class="uk-modal-dialog modal-content uk-modal-body">
+														<div class="uk-position-relative">
+															<h2 class="uk-modal-title f-t-uppercase">awardee awards</h2>
+															<button class="uk-modal-close uk-modal-close-default" type="button" uk-close></button>
+														</div>
+														<div class="p-b-remove">
+															<div class="p-l-remove m-l-remove uk-flex-around m-t-lg uk-flex-middle" uk-grid>
+																<div class="p-remove">
+																	<img class="img-lg p-l-remove" src="./images/avatar.jpg" alt="" />
+																</div>
+																<div class="f-a-center p-remove">
+																	<h3>Ezekiel Magnata</h3>
+																	<h5 class="f-w-medium m-y-sm">HR Manager</h5>
+																</div>
+															</div>
+															<h2>Awards</h2>
+															<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+																<div>
+																	<a class="uk-inline" href="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" data-caption="Received on March 27, 2019">
+																		<img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" data-caption="Received on March 27, 2020">
+																		<img src="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="uk-panel">
+												<a href="#awardee-awards-modal-3" uk-toggle>
+													<img src="./images/avatar.jpg" alt="" />
+													<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+														<h3 class="uk-margin-remove p-b-sm">Lincoln Jonard</h3>
+														<p class="uk-margin-remove uk-panel-position m-t-xxl">Back-End Developer</p>
+													</div>
+												</a>
+												<div id="awardee-awards-modal-3" uk-modal>
+													<div class="uk-modal-dialog modal-content uk-modal-body">
+														<div class="uk-position-relative">
+															<h2 class="uk-modal-title f-t-uppercase">awardee awards</h2>
+															<button class="uk-modal-close uk-modal-close-default" type="button" uk-close></button>
+														</div>
+														<div class="p-b-remove">
+															<div class="p-l-remove m-l-remove uk-flex-around m-t-lg uk-flex-middle" uk-grid>
+																<div class="p-remove">
+																	<img class="img-lg p-l-remove" src="./images/avatar.jpg" alt="" />
+																</div>
+																<div class="f-a-center p-remove">
+																	<h3>Lincoln Jonard</h3>
+																	<h5 class="f-w-medium m-y-sm">Back-End Developer</h5>
+																</div>
+															</div>
+															<h2>Awards</h2>
+															<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+																<div>
+																	<a class="uk-inline" href="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" data-caption="Received on March 27, 2019">
+																		<img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" data-caption="Received on March 27, 2020">
+																		<img src="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="uk-panel">
+												<a href="#awardee-awards-modal-4" uk-toggle>
+													<img src="./images/avatar.jpg" alt="" />
+													<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+														<h3 class="uk-margin-remove p-b-sm">Marky Cielo</h3>
+														<p class="uk-margin-remove uk-panel-position m-t-xxl">SEO</p>
+													</div>
+												</a>
+												<div id="awardee-awards-modal-4" uk-modal>
+													<div class="uk-modal-dialog modal-content uk-modal-body">
+														<div class="uk-position-relative">
+															<h2 class="uk-modal-title f-t-uppercase">awardee awards</h2>
+															<button class="uk-modal-close uk-modal-close-default" type="button" uk-close></button>
+														</div>
+														<div class="p-b-remove">
+															<div class="p-l-remove m-l-remove uk-flex-around m-t-lg uk-flex-middle" uk-grid>
+																<div class="p-remove">
+																	<img class="img-lg p-l-remove" src="./images/avatar.jpg" alt="" />
+																</div>
+																<div class="f-a-center p-remove">
+																	<h3>Marky Cielo</h3>
+																	<h5 class="f-w-medium m-y-sm">SEO</h5>
+																</div>
+															</div>
+															<h2>Awards</h2>
+															<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+																<div>
+																	<a class="uk-inline" href="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" data-caption="Received on March 27, 2019">
+																		<img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" data-caption="Received on March 27, 2020">
+																		<img src="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="uk-panel">
+												<a href="#awardee-awards-modal-5" uk-toggle>
+													<img src="./images/avatar.jpg" alt="" />
+													<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+														<h3 class="uk-margin-remove p-b-sm">Boy Magdingal</h3>
+														<p class="uk-margin-remove uk-panel-position m-t-xxl">Graphics Artist</p>
+													</div>
+												</a>
+												<div id="awardee-awards-modal-5" uk-modal>
+													<div class="uk-modal-dialog modal-content uk-modal-body">
+														<div class="uk-position-relative">
+															<h2 class="uk-modal-title f-t-uppercase">awardee awards</h2>
+															<button class="uk-modal-close uk-modal-close-default" type="button" uk-close></button>
+														</div>
+														<div class="p-b-remove">
+															<div class="p-l-remove m-l-remove uk-flex-around m-t-lg uk-flex-middle" uk-grid>
+																<div class="p-remove">
+																	<img class="img-lg p-l-remove" src="./images/avatar.jpg" alt="" />
+																</div>
+																<div class="f-a-center p-remove">
+																	<h3>Boy Magdingal</h3>
+																	<h5 class="f-w-medium m-y-sm">Graphics Artist</h5>
+																</div>
+															</div>
+															<h2>Awards</h2>
+															<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
+																<div>
+																	<a class="uk-inline" href="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" data-caption="Received on March 27, 2019">
+																		<img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" data-caption="Received on March 27, 2020">
+																		<img src="https://simplecert.net/wp-content/uploads/2018/03/EM-Lab-Certificate-1.png" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+																<div>
+																	<a class="uk-inline" href="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" data-caption="Received on March 27, 2021">
+																		<img src="https://templatelab.com/wp-content/uploads/2018/11/Certificate-employee-1-e1542525135159.jpg" alt="" />
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+
+									<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+									<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+								</div>
+							</div>
+						</div>
+						<div class="uk-width-1-3"></div>
+					</section>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>

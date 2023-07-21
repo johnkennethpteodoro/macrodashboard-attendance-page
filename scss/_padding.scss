@@ -1,0 +1,163 @@
+.p {
+	&-remove {
+		padding: 0;
+	}
+	&-xs {
+		padding: $xs;
+	}
+	&-sm {
+		padding: $sm;
+	}
+	&-md {
+		padding: $md;
+	}
+	&-lg {
+		padding: $lg;
+	}
+	&-xl {
+		padding: $xl;
+	}
+	&-xxl {
+		padding: $xxl;
+	}
+	&-t-remove {
+		padding-top: 0;
+	}
+	&-t-xs {
+		padding-top: $xs;
+	}
+	&-t-sm {
+		padding-top: $sm;
+	}
+	&-t-md {
+		padding-top: $md;
+	}
+	&-t-lg {
+		padding-top: $lg;
+	}
+	&-t-xl {
+		padding-top: $xl;
+	}
+	&-t-xxl {
+		padding-top: $xxl;
+	}
+	&-r-remove {
+		padding-right: 0;
+	}
+	&-r-xs {
+		padding-right: $xs;
+	}
+	&-r-sm {
+		padding-right: $sm;
+	}
+	&-r-md {
+		padding-right: $md;
+	}
+	&-r-lg {
+		padding-right: $lg;
+	}
+	&-r-xl {
+		padding-right: $xl;
+	}
+	&-r-xxl {
+		padding-right: $xxl;
+	}
+	&-b-remove {
+		padding-bottom: 0;
+	}
+	&-b-xs {
+		padding-bottom: $xs;
+	}
+	&-b-sm {
+		padding-bottom: $sm;
+	}
+	&-b-md {
+		padding-bottom: $md;
+	}
+	&-b-lg {
+		padding-bottom: $lg;
+	}
+	&-b-xl {
+		padding-bottom: $xl;
+	}
+	&-b-xxl {
+		padding-bottom: $xxl;
+	}
+	&-l-remove {
+		padding-left: 0;
+	}
+	&-l-xs {
+		padding-left: $xs;
+	}
+	&-l-sm {
+		padding-left: $sm;
+	}
+	&-l-md {
+		padding-left: $md;
+	}
+	&-l-lg {
+		padding-left: $lg;
+	}
+	&-l-xl {
+		padding-left: $xl;
+	}
+	&-l-xxl {
+		padding-left: $xxl;
+	}
+	&-x-remove {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&-x-xs {
+		padding-left: $xs;
+		padding-right: $xs;
+	}
+	&-x-sm {
+		padding-left: $sm;
+		padding-right: $sm;
+	}
+	&-x-md {
+		padding-left: $md;
+		padding-right: $md;
+	}
+	&-x-lg {
+		padding-left: $lg;
+		padding-right: $lg;
+	}
+	&-x-xl {
+		padding-left: $xl;
+		padding-right: $xl;
+	}
+	&-x-xxl {
+		padding-left: $xxl;
+		padding-right: $xxl;
+	}
+	&-y-remove {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	&-y-xs {
+		padding-top: $xs;
+		padding-bottom: $xs;
+	}
+	&-y-sm {
+		padding-top: $sm;
+		padding-bottom: $sm;
+	}
+	&-y-md {
+		padding-top: $md;
+		padding-bottom: $md;
+	}
+	&-y-lg {
+		padding-top: $lg;
+		padding-bottom: $lg;
+	}
+	&-y-xl {
+		padding-top: $xl;
+		padding-bottom: $xl;
+	}
+	&-y-xxl {
+		padding-top: $xxl;
+		padding-bottom: $xxl;
+	}
+}

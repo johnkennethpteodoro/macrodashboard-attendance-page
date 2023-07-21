@@ -1,0 +1,58 @@
+// Margin and Padding Sizes
+$xs: 8px;
+$sm: 16px;
+$md: 24px;
+$lg: 32px;
+$xl: 64px;
+$xxl: 104px;
+
+// Font Family
+$font-family-gotham: "GothamPro";
+$font-family-gotham: "Gotham";
+
+// Font Sizes
+$font-size-xxl: 48px;
+$font-size-xl: 34px;
+$font-size-lg: 28px;
+$font-size-md: 22px;
+$font-size-sm: 18px;
+$font-size-xs: 16px;
+$font-size-xxs: 14px;
+
+// Font Weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Colors
+$primary: #323133;
+$primaryDark: #212121;
+
+$secondary: #ed1c24;
+$secondaryDark: #d51920;
+
+$success: #28a745;
+$successDark: #1f8536;
+
+$warning: #ffa500;
+$warningDark: #cb8035;
+
+$danger: #dc3545;
+$dangerDark: #c51e2e;
+
+$ghostDark: #e5e5e5;
+
+$contentBg: #fafafa;
+$background: #eceff1;
+$border: #d0d0d0;
+$placeholderText: #afafaf;
+$tabHover: #d3d3d3;
+
+// Break Points
+$breakpointXs: 319px;
+$breakpointSm: 480px;
+$breakpointMd: 640px;
+$breakpointLg: 960px;
+$breakpointXl: 1200px;
+$breakpointXxl: 1600px;

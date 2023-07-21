@@ -1,0 +1,18 @@
+.attendance-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.attendance-list {
+	list-style: none;
+
+	&-header {
+		background-color: $background;
+		color: $placeholderText;
+	}
+
+	&-item {
+		color: $primary;
+		border-bottom: 1px solid $background;
+	}
+}

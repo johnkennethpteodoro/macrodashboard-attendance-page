@@ -1,0 +1,89 @@
+.project-list {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	.title-search-handle {
+		display: flex;
+		justify-content: space-between;
+	}
+	.proj-card {
+		padding: 30px;
+		.proj-image {
+			width: 100%;
+			border: 1px solid #afafaf;
+		}
+		.proj-info {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+
+			.proj-title {
+				font-size: $font-size-md;
+			}
+
+			.ratings {
+				display: flex;
+				justify-content: space-between;
+
+				h6 {
+					margin-top: 1px;
+					margin-right: 5px;
+					font-weight: $font-weight-regular;
+				}
+
+				i {
+					margin: 2px 3px;
+					color: orange;
+					font-size: 17px;
+				}
+			}
+		}
+		.proj-status {
+			margin-top: 0px;
+			margin-bottom: 40px;
+			text-align: left;
+			font-weight: $font-weight-regular;
+
+			.in-progress {
+				color: orange;
+				font-weight: $font-weight-semibold;
+			}
+			.maintenance {
+				color: red;
+				font-weight: $font-weight-semibold;
+			}
+			.operational {
+				color: green;
+				font-weight: $font-weight-semibold;
+			}
+		}
+		.proj-btn {
+			text-align: left;
+			.btn {
+				margin-right: 10px;
+			}
+		}
+		a {
+			text-transform: none;
+			text-decoration: none;
+			text-align: center;
+			.proj-add {
+				justify-content: center;
+				margin-top: 50px;
+
+				.bxs-plus-circle {
+					font-size: 120px;
+					color: $secondary;
+				}
+				h2 {
+					font-weight: $font-weight-regular;
+					margin-top: 10px;
+				}
+			}
+		}
+		.center-form {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+}

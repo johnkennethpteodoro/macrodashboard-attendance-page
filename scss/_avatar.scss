@@ -1,0 +1,22 @@
+.img {
+	&-xs {
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+	}
+	&-sm {
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+	}
+	&-md {
+		width: 87px;
+		height: 87px;
+		border-radius: 50%;
+	}
+	&-lg {
+		width: 205px;
+		height: 190px;
+		border-radius: 120%;
+	}
+}

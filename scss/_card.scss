@@ -1,0 +1,28 @@
+.qx-card {
+	border: 1px solid #ddd;
+  
+	&-primary {
+		background-color: $primary;
+		color: #fff;
+	}
+
+	&-default {
+		background-color: #fff;
+		color: $primary;
+	}
+
+	&-disable {
+		border: 1px solid $primary;
+		background-color: #fff;
+		color: $placeholderText;
+	}
+
+	&-footer {
+		justify-content: space-between;
+		display: flex;
+	}
+
+	&.shadow {
+		box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.1);
+	}
+}
